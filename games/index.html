@@ -1,0 +1,326 @@
+﻿<!-- Games -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Games - Teamnanotech</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!--<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">-->
+    <link href="https://teamnanotech.ml/Style.css" rel="stylesheet">
+    <script type="text/javascript">
+
+        var open = false;
+        var open1 = false;
+        var open2 = false;
+        function toggle() {
+            open = !open;
+
+            if (open) {
+                var dd = document.getElementById("closedropdown");
+                dd.style.cursor = "default";
+                let x = document.getElementsByClassName('pages');
+                let y = document.getElementsByClassName('pageholder');
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                    if (x.length = 0) {
+                }
+                dd.style.display = "none";
+            }
+                dd.style.display = "none";
+            }
+        }
+
+        function togglesearch() {
+            open1 = !open1;
+
+            if (open1) {
+                var dd = document.getElementById("searchmenu");
+                dd.style.display = "block";
+            }
+            else {
+                var dd = document.getElementById("searchmenu");
+                dd.style.display = "none";
+            }
+        }
+
+        function togglemobile() {
+            open2 = !open2;
+
+            if (open2) {
+                var dd = document.getElementById("menu");
+                dd.style.display = "grid";
+            }
+            else {
+                var dd = document.getElementById("menu");
+                dd.style.display = "none";
+            }
+        }
+
+        function search_bar() {
+            let input = document.getElementById('searchbar').value;
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('pages');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input) || input.length == 0) {
+                    x[i].style.display = "none";
+                }
+                else if (x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "block";
+                    var dd = document.getElementById("closedropdown");
+                    if (dd.style.display == "none") {
+                        dd.style.display = "block";
+                        dd.style.cursor = "default";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="text-gray-700 body-font block z-10 relative bg-white">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <img src="https://teamnanotech.ml/logo.jpg" width="50" height="50" style="border-radius: 50%">
+                <span class="ml-3 text-xl font-medium text-gray-900">Team Nanotech</span>
+                <span class="ml-3 text-m text-indigo-600 font-medium">Born To Create</span>
+            </a>
+            <div class="hidden md:block mx-auto sm:hidden">
+                <a href="https://teamnanotech.ml/" class="ml-3 mr-2 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">Home</a>
+                <a href="https://teamnanotech.ml/about" class="ml-3 mr-2 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">About</a>
+                <a href="https://teamnanotech.ml/contact" class="ml-3 mr-2 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">Contact</a>
+                <a href="https://teamnanotech.ml/creations" class="ml-3 mr-2 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">Creations</a>
+                <a href="https://teamnanotech.ml/games" class="ml-3 mr-2 font-medium text-gray-600 hover:text-indigo-900 transition duration-150 ease-in-out">Games</a>
+            </div>
+            <div class="flex ml-auto">
+                <a onclick="togglesearch()">
+                    <img src="https://teamnanotech.ml/magnifiying-glass.png" width="20" height="20" style="filter: opacity(0.4)">
+                </a>
+            </div>
+
+            <div class="absolute w-full bg-white flex md:flex-no-wrap flex-wrap justify-center md:justify-start" style="display: none;" id="searchmenu">
+                <button class="fixed inset-0 h-full w-full" id="closedropdown" tabindex="-1" onclick="toggle()" style="display: none; opacity: 0"></button>
+                <div class="">
+                    <input class="mt-4 sm:w-64 w-40 bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base py-4 px-4" id="searchbar" onkeyup="search_bar()" type="text"
+                           name="search" placeholder="Search">
+                    <div class="z-10 absolute" style="bottom: 40px; margin-left: 14rem;">
+                        <a onclick="togglesearch()">
+                            <img src="https://teamnanotech.ml/cancel.png" width="20" height="20" style="filter: opacity(0.4); right: 60px; top:30; position: fixed;">
+                        </a>
+                    </div>
+                    <div class="right-0 absolute block bg-white shadow-xl rounded-lg hover:rounded-lg z-20" id="pageholder" style="top: auto; left: 0rem; width: 16rem;">
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Home</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">About</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Contact</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Creations</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Games</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Achievements</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Super Mario</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Pacman</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">2048</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Piano Tiles</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href="">Chess</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg focus:text-gray-800 focus:bg-gray-200" href=""> </a>
+                        <a class="pages px-4 py-2 text-gray-600"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="text-gray-700 body-font hidden z-10 relative bg-white">
+        <div class="flex flex-wrap sm:flex p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <img src="https://teamnanotech.ml/logo.jpg" class="w-16 h-16" style="border-radius: 50%;">
+                <span class="ml-3"><a href="" class="ml-3 text-xl sm:text-4xl font-medium text-gray-900">Team Nanotech</a></span>
+                <span class="ml-3 text-m sm:text-3xl text-indigo-600 font-medium">Born To Create</span>
+            </a>
+
+            <div class="sm:block justify-end ml-auto hidden" id="menubar">
+                <a onclick="togglemobile()">
+                    <img src="https://teamnanotech.ml/menu.png" width="40" height="40" style="filter: opacity(0.4)">
+                </a>
+            </div>
+
+            <div class="flex md:flex-no-wrap flex-wrap justify-center md:justify-start">
+                <button class="fixed inset-0 h-full w-full" id="closedropdown" tabindex="-1" onclick="toggle()" style="display: none; opacity: 0"></button>
+                <div class="relative">
+                    <!--<input class="sm:w-64 w-40 bg-gray-100 rounded sm:mr-4 mr-2 border border-gray-400 focus:outline-none focus:border-indigo-500 text-base py-2 px-4" id="searchbar" onkeyup="search_bar()" type="text"
+            name="search" placeholder="Search">-->
+                    <div class="left-0 absolute block bg-white shadow-xl rounded-lg">
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Home</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">About</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Contact</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Creations</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Games</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Achievements</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Super Mario</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Pacman</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">2048</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Piano Tiles</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href="">Chess</a>
+                        <a class="pages px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:rounded-lg focus:bg-gray-100 focus:rounded-lg" href=""> </a>
+                        <a class="pages px-4 py-2 text-gray-600"> </a>
+                    </div>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </header>
+    <header>
+        <div class="relative sm:block z-20">
+            <div class="hidden absolute left-auto w-full bg-white" id="menu">
+                <a href="#" class="text-2xl px-2 ml-6 mr-2 mt-4 rounded-lg focus:bg-gray-200 font-medium text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Home</a>
+                <a href="#" class="text-2xl px-2 ml-6 mr-2 mt-4 rounded-lg focus:bg-gray-200 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">About</a>
+                <a href="#" class="text-2xl px-2 ml-6 mr-2 mt-4 rounded-lg focus:bg-gray-200 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">Contact</a>
+                <a href="#" class="text-2xl px-2 ml-6 mr-2 mt-4 rounded-lg focus:bg-gray-200 font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">Creations</a>
+                <a href="#" class="text-2xl px-2 ml-6 mr-2 mt-4 rounded-lg focus:bg-gray-200 mb-4 font-medium text-gray-500 hover:text-indigo-900 transition duration-150 ease-in-out">Games</a>
+            </div>
+        </div>
+    </header>
+    <section class="text-gray-700 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center bg-indigo-100 text-indigo-500 flex-shrink-0">
+            <img src="Mario.png" />
+          </div>
+          <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-2" style="        margin-left: 4rem;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 4.5rem;
+">Mario</h2>
+            <div class="flex lg:flex-row md:flex-col" style="justify-content: flex-end;">
+                <a href="https://teamnanotech.ml/mario/" style="width: 12rem;" class="text-m w-16 flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                    Click Here
+                </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-2" style=" margin-left: 4rem;">Pacman</h2>
+            <div class="flex lg:flex-row md:flex-col">
+                <a href="https://teamnanotech.ml/pacman" style="width: 12rem;" class="text-m w-16 flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                    Click Here
+                </a>
+            </div>
+          </div>
+          <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center bg-indigo-100 text-indigo-500 flex-shrink-0">
+              <img src="Pacman.png" />
+          </div>
+        </div>
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center bg-indigo-100 text-indigo-500 flex-shrink-0">
+              <img src="2048.png" />
+          </div>
+          <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2 class="text-gray-900 text-lg title-font font-medium mb-2" style="        margin-left: 4rem;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 4.5rem;
+">2048</h2>
+            <div class="flex lg:flex-row md:flex-col" style=" justify-content: flex-end;">
+                <a href="https://teamnanotech.ml/2048" style="width: 12rem;" class="text-m w-16 flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                    Click Here
+                </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-2" style="margin-left: 4rem;">Piano Tiles</h2>
+                <div class="flex lg:flex-row md:flex-col">
+                    <a href="https://teamnanotech.ml/piano-tiles" style="width: 12rem;" class="text-m w-16 flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                        Click Here
+                    </a>
+                </div>
+            </div>
+            <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center bg-indigo-100 text-indigo-500 flex-shrink-0">
+                <img src="piano.png" />
+            </div>
+        </div>
+      </div>
+    </section>
+    <footer class="text-gray-700 body-font">
+        <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img src="logo.jpg" width="50" height="50" style="border-radius: 50%">
+                    <span class="ml-3 text-xl">Team Nanotech</span>
+                </a>
+                <p class="mt-2 text-sm text-gray-500">Born to create</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Menu Items</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">About</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Contact</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Games</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Super Mario</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Pacman</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">2048</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Piano Tiles</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Chess</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Creations</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">Face Mask Detector</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">COVID 19 Tracker</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800">The Helping Vision</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-200 mt-auto">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">
+                    © 2020 Teamnanotech
+                    <a href="https://twitter.com/" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank"></a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-gray-500" href="https://teamnanotech18@gmail.com">
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/gmail.png" width="20" height="30">
+                    </a>
+                    <a class="ml-3 text-gray-500" href="https://www.youtube.com/channel/UCL45YGAQ3ecPFxNfkBVAyKQ">
+                        <img src="https://img.icons8.com/material-sharp/48/000000/youtube-play.png" width="20" height="30">
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<style>
+    .pages {
+        display: none;
+    }
+</style>
